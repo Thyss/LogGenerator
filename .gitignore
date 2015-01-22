@@ -2,3 +2,7 @@
 out/artifacts/LogGenerator_jar/logfile.log
 
 .idea/workspace.xml
+
+out/
+
+production/
