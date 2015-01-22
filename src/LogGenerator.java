@@ -18,7 +18,6 @@ public class LogGenerator {
 
 
     public static void main(String [ ] args) {
-
         //Generate a logline indefinately
         try {
             while (true) {
@@ -34,13 +33,18 @@ public class LogGenerator {
 
                 Random random = null;
 
+                //Set the format of the date
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String date = sdf.format(new Date());
+
+                //This is the logline that will be printed in the logfile
                 String logtext = date + " " + ip[0] + " GET " + pages[1] + " - 443 - " + osBrowser[0] + " 83.233.28.2  200 0 0 103";
                 bufferedWriter.write(logtext + newLine);
                 bufferedWriter.close();
-                //Put to sleep for a few seconds or so to not flood the system
+
                 System.out.println("Logfile updated with new line: " + logtext);
+
+                //Put to sleep for a few seconds or so to not flood the system
                 Thread.sleep(500);
             }
         } catch (Exception e) {
